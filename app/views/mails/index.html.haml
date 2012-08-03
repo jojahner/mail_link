@@ -1,0 +1,15 @@
+%h1 Mails#index
+%p Find me in app/views/mails/index.html.haml
+- @mails.each do |mail|
+  .from
+    From:
+    = mail.from
+  .to
+    To:
+    = mail.to
+  .subject
+    = mail.subject
+  %pre.text
+    = mail.text
+
+  %hr

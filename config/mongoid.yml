@@ -1,0 +1,24 @@
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] || ENV['MONGOLAB_URI'] %>
+      options:
+        consistency: :strong
+
+development:
+  sessions:
+    default:
+      database: mail_links_development
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+
+test:
+  sessions:
+    default:
+      database: mail_links_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
