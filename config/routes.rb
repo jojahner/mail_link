@@ -1,7 +1,7 @@
 MailLinks::Application.routes.draw do
-  resources :mails, only: [:index, :show, :create]
-
   root to: 'mails#index'
+ 
+  resources :mails, only: [:index, :show, :create]
   resources :users, only: [:new, :create]
   
   match 'login' => 'sessions#new', as: 'login', via: :get

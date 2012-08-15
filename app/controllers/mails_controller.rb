@@ -1,6 +1,8 @@
 class MailsController < ApplicationController
   protect_from_forgery :except => :create 
 
+  before_filter :authorize, except: :create
+
   def index
     @mails = Mail.all
   end
