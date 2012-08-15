@@ -1,0 +1,6 @@
+%h1 Sessions#new
+%p Find me in app/views/sessions/new.html.haml
+= simple_form_for :user do |f|
+  = f.input :email
+  = f.input :password
+  = f.submit 'login'
