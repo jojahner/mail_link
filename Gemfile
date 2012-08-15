@@ -39,6 +39,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'bson_ext'
 gem 'mongoid', '>= 2.0.0.beta.19'
+gem 'simple_form'
 
 group :development, :test do
   gem 'capybara'
