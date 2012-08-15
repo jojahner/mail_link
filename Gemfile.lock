@@ -79,6 +79,7 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hike (1.2.1)
+    hpricot (0.8.6)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -151,6 +152,8 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    ruby_parser (2.3.1)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.9)
     sass (3.1.20)
     sass-rails (3.2.5)
@@ -162,6 +165,7 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    sexp_processor (3.2.0)
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -198,12 +202,14 @@ DEPENDENCIES
   guard-spin
   haml (>= 3.0.0)
   haml-rails
+  hpricot
   jquery-rails
   mongoid (>= 2.0.0.beta.19)
   powder
   rails (= 3.2.6)
   rb-fsevent
   rspec-rails (>= 2.0.1)
+  ruby_parser
   sass-rails (~> 3.2.3)
   simple_form
   uglifier (>= 1.0.3)

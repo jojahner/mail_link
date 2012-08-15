@@ -55,4 +55,7 @@ group :development do
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'guard-spin'
+
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
