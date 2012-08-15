@@ -1,2 +1,6 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+%h1 Register
+= simple_form_for @user do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.submit

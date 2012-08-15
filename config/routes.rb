@@ -2,6 +2,7 @@ MailLinks::Application.routes.draw do
   resources :mails, only: [:index, :show, :create]
 
   root to: 'mails#index'
+  resources :users, only: [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

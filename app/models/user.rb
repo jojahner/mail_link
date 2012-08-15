@@ -8,5 +8,6 @@ class User
   has_secure_password
 
   validates :email, presence: true, uniqueness: true
+  validates_presence_of :password, on: :create
   attr_accessible :email, :password, :password_confirmation
 end
