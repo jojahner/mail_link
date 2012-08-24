@@ -3,4 +3,6 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-  = f.submit
+  .form-actions
+    = f.submit 'register', class: 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'btn'
