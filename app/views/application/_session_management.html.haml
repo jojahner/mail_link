@@ -1,2 +1,7 @@
-#session-management
-  = link_to 'logout', logout_path, method: 'delete'
+%ul.nav#session-management
+  - if current_user
+    %li
+      = link_to 'logout', logout_path, method: 'delete'
+  - else
+    %li
+      = link_to 'login', login_path
