@@ -1,0 +1,20 @@
+jQuery ->
+  $('#persona-login-button').click (event)->
+    alert event
+    event.preventDefault()
+    navigator.id.request()
+
+  navigator.id.watch {
+    loggedInEmail: window.current_user
+    onlogin: (assertion)->
+      $.ajax {
+        type: 'post'
+        url: '/login'
+        data: {
+          assertion: assertion
+        }
+      }
+    onlogout: ->
+      alert 'logout'
+  }
+

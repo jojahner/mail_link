@@ -11,9 +11,8 @@
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag "application", :media => "all"
 
-
   %body
-    .navbar.navbar-fixed-top
+    %header.navbar.navbar-fixed-top
       .navbar-inner
         .container
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
@@ -32,6 +31,9 @@
                     = link_to 'logout', logout_path
             - else
               %li
+                = link_to '#', id: 'persona-login-button' do
+                  = image_tag asset_path('persona_sign_in_black.png')
+              %li
                 = link_to 'login', login_path
               %li
                 = link_to 'register', '#'
@@ -46,5 +48,9 @@
     
       %footer
         %p &hearts;
-    
+
+    = javascript_include_tag "https://login.persona.org/include.js"
     = javascript_include_tag "application"
+
+:javascript
+  window.current_user = #{current_user.nil? ? 'null' : current_user.email};

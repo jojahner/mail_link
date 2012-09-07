@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+footer {
+  color: #E6E6E6;
+}
+
+#persona-login-button {
+  width: 150px;
+}

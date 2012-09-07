@@ -1,5 +1,5 @@
 MailLinks::Application.routes.draw do
-  root to: 'mails#index'
+  root to: 'pages#index'
  
   resources :mails, only: [:index, :show, :create]
   resources :users, only: [:new, :create]
