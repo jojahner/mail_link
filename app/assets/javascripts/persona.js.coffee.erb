@@ -7,14 +7,16 @@ jQuery ->
   navigator.id.watch {
     loggedInEmail: window.current_user
     onlogin: (assertion)->
-      $.ajax {
+      $.ajax
         type: 'post'
-        url: '/login'
-        data: {
+        url: $('#persona-login-button').data('create-url')
+        data:
           assertion: assertion
-        }
-      }
+      .done (data)->
+         alert data
+      .fail (data)->
+        alert data
     onlogout: ->
-      alert 'logout'
+      alert "logout"
   }
 

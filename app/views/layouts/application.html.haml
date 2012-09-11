@@ -31,10 +31,10 @@
                     = link_to 'logout', logout_path
             - else
               %li
-                = link_to '#', id: 'persona-login-button' do
+                = link_to '#', id: 'persona-login-button', data: {'create-url' => persona_session_path} do
                   = image_tag asset_path('persona_sign_in_black.png')
               %li
-                = link_to 'login', login_path
+                = link_to 'login', new_session_path
               %li
                 = link_to 'register', '#'
 
