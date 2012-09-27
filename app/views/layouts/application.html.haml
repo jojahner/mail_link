@@ -28,11 +28,14 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    = link_to 'logout', logout_path
+                    = link_to 'logout', session_path, method: 'delete'
             - else
               %li
-                = link_to '#', id: 'persona-login-button', data: {'create-url' => persona_session_path} do
-                  = image_tag asset_path('persona_sign_in_black.png')
+                - unless current_user
+                  = link_to '#', id: 'persona-login-button', data: {'create-url' => persona_session_path} do
+                    = image_tag asset_path('persona_sign_in_black.png')
+                - else
+                  = link_to 'logout', '#', id: 'persona-logout-button'
               %li
                 = link_to 'login', new_session_path
               %li

@@ -1,21 +1,20 @@
 jQuery ->
   $('#persona-login-button').click (event)->
-    alert event
     event.preventDefault()
     navigator.id.request()
 
   navigator.id.watch {
-    loggedInEmail: window.current_user
+    loggedInUser: window.current_user
     onlogin: (assertion)->
       $.ajax
         type: 'post'
         url: $('#persona-login-button').data('create-url')
+        dataType: "json"
         data:
           assertion: assertion
       .done (data)->
-         alert data
-      .fail (data)->
-        alert data
+        console.log data
+        window.location = data.redirect_to
     onlogout: ->
       alert "logout"
   }
